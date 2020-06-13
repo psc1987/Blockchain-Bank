@@ -1,0 +1,420 @@
+* {
+  box-sizing: border-box;
+}
+ul {
+  list-style-type: none;
+}
+body {
+  font-family: sans-serif;
+}
+/* container */
+.container {
+  /* background-color: rgb(229, 222, 222); */
+  background-color: #f5f5f5;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+/* header */
+.header {
+  background-color: #112755;
+  /* width: 100%; */
+  position: relative;
+  padding: 0 30px 40px;
+}
+.logo {
+  position: absolute;
+  /* top: 47px; */
+  left: 65px;
+  color: #fff;
+  cursor: pointer;
+  /* bottom: 1px; */
+  /* top: 5px; */
+  /* left: 65px; */
+}
+.navigation {
+  /* background: pink; */
+}
+.menu {
+  /* background: linear-gradient(to bottom, #e8852e 0%,#ed552f 35%,#ed552f 70%,#e8852e 100%); */
+  /* background-color: #ed552f; */
+  border-top: 2px solid #000;
+  border-radius: 0 0 5px 5px;
+  padding-left: 400px;
+  padding-top: 20px;
+  height: 47px;
+}
+.menu-item {
+  float: left;
+  /* position: relative; */
+  /* outline: 0; */
+}
+.menu-item-text {
+  cursor: pointer;
+  display: block;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.6rem;
+  padding: 0 20px;
+  line-height: 45px;
+}
+.menu-item span:hover,
+.menu-item span:focus{
+  color: #f00;
+}
+.profile {
+  /* background-color: orange; */
+  /* color: #fff; */
+  position: absolute;
+  right: 65px;
+  /* bottom: 10px; */
+}
+
+/* index */
+.index-page {
+  /* background-color: yellow; */
+  /* position: relative; */
+}
+.index-contents {
+  /* background-color: orange; */
+  padding: 130px 200px 200px 200px;
+  position: relative;
+  /* border: 1px solid black; */
+  /* left: 50%; */
+}
+.index-contents h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.signup {
+  /* background-color: blue; */
+  position: absolute;
+  left: 40%;
+  font-size: 20px;
+}
+.login {
+  /* background-color: green; */
+  position: absolute;
+  right: 40%;
+  font-size: 20px;
+}
+/* signup page */
+.main-signup {
+  /* background-color: green; */
+  /* position: relative; */
+  padding: 50px;
+}
+.signup-form {
+  background-color: #fff;
+  width: 30%;
+  margin: auto;
+  padding: 20px;
+  /* border: 1px solid black; */
+  border-radius: 15px 15px 15px 15px;
+  /* height: 300px; */
+}
+.signup-form p, h2 {
+  /* background-color: saddlebrown; */
+  text-align: center;
+  margin: 20px;
+}
+input[type='text'] {
+  padding-left: 10px;
+}
+input[type='password'] {
+  padding-left: 10px;
+}
+/* login page */
+.main-login {
+  /* background-color: green; */
+  /* position: relative; */
+  padding: 50px;
+}
+.login-form {
+  background-color: #fff;
+  width: 30%;
+  margin: 30px auto;
+  padding: 20px;
+  /* border: 1px solid black; */
+  border-radius: 15px 15px 15px 15px;
+  /* height: 300px; */
+}
+.login-form p, h2 {
+  /* background-color: saddlebrown; */
+  text-align: center;
+  margin: 20px;
+}
+/* .signup-userId {
+  background-color: saddlebrown;
+  position: absolute;
+  left: 40%;
+  top: 0;
+}
+.signup-email {
+  background-color: saddlebrown;
+  position: absolute;
+  left: 40%;
+  top: 30%;
+}
+.signup-name {
+  background-color: saddlebrown;
+  position: absolute;
+  left: 40%;
+  top: 60%;
+}
+.signup-password {
+  background-color: saddlebrown;
+  position: absolute;
+  left: 40%;
+  bottom: 0;
+} */
+/* .signup-form p {
+  background-color: saddlebrown;
+} */
+/* .accounts-info {
+  padding: 10px;
+  border-radius: 5px 5px 5px 5px;
+  position: relative;
+}
+.accounts-header {
+  position: relative;
+  margin-bottom: 20px;
+  padding: 10px;
+  height: 100px;
+  border: 1px solid #aaa;
+} */
+
+/* main */
+.main-accounts {
+  /* border-radius: 15px 15px 0 0; */
+  /* background-color: gray; */
+  padding: 0 70px 0 70px;
+  /* width: 940px; */
+  /* height: 400px; */
+  /* margin: 50px auto; */
+}
+.my-accounts {
+  background-color: #fff;
+  margin: 100px;
+  border-radius: 15px 15px 15px 15px;
+  /* height: 300px; */
+}
+.accounts-info {
+  /* background-color: yellow; */
+  padding: 10px;
+  border-radius: 5px 5px 5px 5px;
+  position: relative;
+  /* height: 450px; */
+}
+.accounts-header {
+  /* background-color: green; */
+  position: relative;
+  margin-bottom: 20px;
+  padding: 10px;
+  height: 100px;
+  /* border: 1px solid #aaa; */
+}
+/* .accounts-header h3 {
+  color: blue;
+} */
+.accounts-name {
+  position: absolute;
+  /* left: 65px; */
+  /* color: blue; */
+}
+.accounts-name p {
+  color: blue;
+}
+.accounts-name strong {
+  font-size: 15px;
+}
+.accounts-name span {
+  font-size: 20px;
+}
+.accounts-action {
+  /* background: pink; */
+}
+.action {
+  /* background: linear-gradient(to bottom, #e8852e 0%,#ed552f 35%,#ed552f 70%,#e8852e 100%); */
+  /* background-color: #ed552f; */
+  border-radius: 0 0 5px 5px;
+  /* padding-left: 225px; */
+  height: 30px;
+}
+.action-item {
+  float: right;
+  margin-left: 20px;
+}
+.action-item-text {
+  cursor: pointer;
+  border-color: #4175e2;
+  background: #4175e2;
+  color: #ffffff;
+  display: block;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 1.6rem;
+  padding: 0 20px;
+  line-height: 45px;
+}
+.action-item span:hover,
+.action-item span:focus{
+  color: #f00;
+}
+.myBalance {
+  /* background-color: orange; */
+  position: relative;
+  border: 1px solid #aaa;
+  border-radius: 5px 5px 5px 5px;
+  /* height: 30px; */
+  /* text-align: center; */
+  height: 150px;
+}
+.myBalance p {
+  position: absolute;
+  left: 30%;
+  top: 30%;
+  font-size: 30px;
+}
+
+/* footer */
+.footer {
+  background-color: #112755;
+  position: relative;
+  padding: 0 30px 40px;
+  border-radius: 0 0 5px 5px;
+  height: 180px;
+}
+.footer h3 {
+  color: #fff;
+  position: absolute;
+  left: 45%;
+  top: 25%;
+}
+/* deposit */
+.main-deposit {
+  /* background-color: black; */
+}
+.my-deposit {
+  background-color: #fff;
+  width: 45%;
+  margin: 100px auto;
+  padding: 10px;
+  height: 290px;
+  border-radius: 15px 15px 15px 15px;
+  /* height: 300px; */
+}
+.deposit-header {
+  /* background-color: green; */
+  /* position: relative; */
+  margin-bottom: 10px;
+  text-align: center;
+  /* padding: 5px; */
+  /* height: 100px; */
+  /* border: 1px solid #aaa; */
+}
+.deposit-action {
+  /* background-color: yellow; */
+  margin-top: 30px;
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 5px 5px 5px 5px;
+  position: relative;
+  /* height: 450px; */
+}
+
+/* withdrawal */
+.main-withdrawal {
+  /* background-color: black; */
+}
+.my-withdrawal {
+  background-color: #fff;
+  width: 45%;
+  margin: 100px auto;
+  padding: 10px;
+  height: 290px;
+  border-radius: 15px 15px 15px 15px;
+  /* height: 300px; */
+}
+.withdrawal-header {
+  /* background-color: green; */
+  /* position: relative; */
+  margin-bottom: 10px;
+  text-align: center;
+  /* padding: 5px; */
+  /* height: 100px; */
+  /* border: 1px solid #aaa; */
+}
+.withdrawal-action {
+  /* background-color: yellow; */
+  margin-top: 30px;
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 5px 5px 5px 5px;
+  position: relative;
+  /* height: 450px; */
+}
+
+
+/* transfer */
+.main-transfer {
+  /* background-color: black; */
+  /* padding: 0 150px 0 150px; */
+}
+.my-transfer {
+  background-color: #fff;
+  width: 45%;
+  /* margin: 100px; */
+  margin: 100px auto;
+  padding: 10px;
+  height: 290px;
+  border-radius: 15px 15px 15px 15px;
+  /* height: 300px; */
+}
+.transfer-header {
+  /* background-color: green; */
+  /* position: relative; */
+  margin-bottom: 10px;
+  text-align: center;
+  /* padding: 5px; */
+  /* height: 100px; */
+  /* border: 1px solid #aaa; */
+}
+.transfer-action {
+  /* background-color: yellow; */
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 5px 5px 5px 5px;
+  position: relative;
+  /* height: 450px; */
+}
+
+/* modal */
+.modal-header {
+  text-align: center;
+}
+.modal-header h4 {
+  color: blue;
+}
+.modal-body {
+  /* background-color: yellow; */
+  /* padding: 10px; */
+}
+.amountToPay {
+  /* background-color: red; */
+  margin-top: 30px;
+}
+
+/* transactions */
+.trx-table {
+  /* background-color: yellow; */
+  padding: 20px;
+}
+.table {
+  /* background-color: green; */
+  margin: 30px 0 30px 0;
+  /* margin-right: 50px; */
+}
+.tx-info th{
+  text-align: center;
+}

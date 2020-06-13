@@ -1,0 +1,40 @@
+<head>
+    <title>BlockchainBank</title>
+  </head>
+
+  <body>
+    <h1>Welcome to Blockchain Bank!</h1>
+
+    {{> template_signUp}}
+    {{> template_logIn}}
+    {{> template_createAccount}}
+    {{> template_sendToken}}
+    {{> info}}
+  </body>
+
+  <template name="template_signUp">
+    <input id="userId" type="text" />
+    <input id="password" type="text" />
+    <input id="name" type="text" />
+    <input id="email" type="email" />
+    <button>Sign Up</button>
+  </template>
+
+  <template name="template_logIn">
+    <input id="userId" type="text" />
+    <input id="password" type="password" />
+    <button>Log In</button>
+  </template>
+
+  <template name="template_createAccount">
+    <input id="password" type="text" />
+    <button>Create Account</button>
+  </template>
+
+  <template name="template_sendToken">
+    <button>Send Token</button>
+    <p>Your account is {{account}}</p>
+    <input id="toAddress" type="text" />
+    <input id="tokenAmount" type="number" />
+    <input id="password" type="password" />
+  </template>

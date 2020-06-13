@@ -1,0 +1,389 @@
+<head>
+  <title>Blockchain Bank</title>
+</head>
+
+<body>
+</body>
+
+<template name="main">
+
+<div class="container">
+  <!-- header -->
+  <header class="header">
+      <h1 class="logo">
+        <p>Bank</p>
+      </h1>
+      <nav class="navigation">
+        <ul class="menu">
+          <li class="menu-item">
+            <span class="wallet menu-item-text">Wallet</span>
+          </li>
+          <li class="menu-item">
+            <span class="menu-item-text">Merchant</span>
+          </li>
+          <li class="menu-item">
+            <span class="menu-item-text">Lending</span>
+          </li>
+          <li class="menu-item">
+            <span class="menu-item-text">Trading</span>
+          </li>
+        </ul>
+      </nav>
+      {{#if loginYn}}
+        <div class="profile">
+          {{username}} <button name="logout" class="btn btn-secondary">Log Out</button>
+        </div>
+      {{else}}
+        <div class="profile">
+          <p>Not Log In</p>
+        </div>
+      {{/if}}
+  </header>
+
+  {{>Template.dynamic template=content}}
+
+  <!-- footer -->
+  <footer class="footer">
+      <h3 class="footer-title">&copy; Bank</h3>
+  </footer>
+
+</div>
+
+</template>
+
+<!-- <template name="header">
+  <header class="header">
+    <h1 class="logo">
+      <p>Bank</p>
+    </h1>
+    <nav class="navigation">
+      <ul class="menu">
+        <li class="menu-item">
+          <span class="menu-item-text">Wallet</span>
+        </li>
+        <li class="menu-item">
+          <span class="menu-item-text">Merchant</span>
+        </li>
+        <li class="menu-item">
+          <span class="menu-item-text">Lending</span>
+        </li>
+        <li class="menu-item">
+          <span class="menu-item-text">Trading</span>
+        </li>
+      </ul>
+    </nav>
+    <div class="profile">
+      <p>Logout</p>
+    </div>
+  </header>
+</template> -->
+
+<template name="index">
+  <div class="index-page">
+    <div class="index-contents">
+      <h1>World Financial Services with Blockchain Bank</h1>
+      <button name="signup" class="signup btn btn-info">Sign Up</button>
+      {{#if loginYn}}
+      <div class="profile">
+        <button name="logout" class="btn btn-secondary">Log Out</button>
+      </div>
+    {{else}}
+      <button name="login" class="login btn btn-success">Log In</button>
+    {{/if}}
+    </div>
+  </div>
+</template>
+
+<template name="signup">
+  <main class="main-signup">
+    <div class="signup-form">
+        <h2>Sign Up</h2>
+        <p id="signup-userId"><input type="text" name="userId" placeholder="Id"></p>
+        <p id="signup-email"><input type="text" name="email" placeholder="Email"></p>
+        <p id="signup-name"><input type="text" name="name" placeholder="Name"></p>
+        <p id="signup-password"><input type="password" name="password" placeholder="Password"></p>
+        <p><button name="signUp" class="btn btn-primary">Sign Up</button></p>
+    </div>
+  </main>
+</template>
+
+<template name="login">
+    {{#if loginYn}}
+        {{username}} <button name="logout">Log Out</button>
+    {{else}}
+    <main class="main-login">
+        <div class="login-form">
+            <h2>Log In</h2>
+            <p id="login-id"><input type="text" name="id" placeholder="Id"></p>
+            <p id="login-password"><input type="password" name="password" placeholder="password"></p>
+            <p><button name="logIn" class="btn btn-primary">Log In</button></p>
+        </div>
+    </main>
+    {{/if}}
+</template>
+
+<template name="accounts">
+    <!-- when logined -->
+  <main class="main-accounts">
+    <div class="my-accounts">
+
+    <section class="accounts-info">
+
+      <header class="accounts-header">
+        <h3 class="accounts-name">
+          <p>My Wallet</p> <strong>Address:</strong> <span>{{address}}</span>
+        </h3>
+
+        <!-- each button for action -->
+        <nav class="accounts-action">
+          <ul class="action">
+            <li class="action-item">
+              <button name="transactions" class="btn btn-primary action-item-text">Transactions</button>
+            </li>
+            <li class="action-item">
+              <button name="transfer" class="btn btn-primary action-item-text">Transfer</button>
+            </li>
+            <li class="action-item">
+              <button  name="withdrawal" class="btn btn-primary action-item-text">Withdrawal</button>
+            </li>
+            <li class="action-item">
+              <button name="deposit" class="btn btn-primary action-item-text">Deposit</button>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- get my balance -->
+      <div class="myBalance">
+        <p>Balance: {{accountBalance}} KISA tokens</p>
+      </div>
+
+    </section>
+
+    </div>
+  </main>
+
+</template>
+
+<template name="footer">
+  <footer class="footer">
+    <h3 class="footer-title">Bank</h3>
+  </footer>
+</template>
+
+<!-- deposit page -->
+<template name="deposit">
+    <main class="main-deposit">
+      <div class="my-deposit">
+        <header class="deposit-header">
+            <h3>Deposit funds</h3>
+        </header>
+        <section class="deposit-action">
+          <h4>To Account: {{address}}</h4>
+          <h4>Amount:  <input id="amountTokens" type="number"/> KISA(tokens)</h4>
+          <h4>password: <input id="password" type="password"/>
+          <!-- <button name="send-deposit">Send</button> -->
+
+          <!-- Button trigger modal -->
+          <button name="send-deposit" type="button" class="btn btn-primary" data-toggle="modal" data-target="#depositModal">
+            Deposit
+          </button>
+          </h4>
+
+          <!-- Modal -->
+          <div class="modal fade" id="depositModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="exampleModalLabel">1 KISA = $1 USD </h4><span>(according to market price)</span>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <h4>Credit Card Number:  <input id="creditNumber"></h4>
+                  <h4 id="amountToPay">Amount to Pay:  {{ tokenAmount }} USD</h4>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                  <button name="pay-deposit" type="button" class="btn btn-primary">Pay</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Modal -->
+
+        </section>
+      </div>
+
+    </main>
+</template>
+
+<!-- withdrawal page -->
+<template name="withdrawal">
+    <main class="main-withdrawal">
+      <div class="my-withdrawal">
+        <header class="withdrawal-header">
+            <h3>Withdraw funds</h3>
+        </header>
+        <section class="withdrawal-action">
+          <h4>From Account: {{address}}</h4>
+          <h4>Amount:  <input id="amountTokens" type="number"/> KISA(tokens)</h4>
+          <h4>password: <input id="password" type="password"/>
+          <!-- <button name="send-deposit">Send</button> -->
+
+          <!-- Button trigger modal -->
+          <button name="send-withdrawal" type="button" class="btn btn-primary" data-toggle="modal" data-target="#withdrawalModal">
+            Withdraw
+          </button>
+          </h4>
+
+          <!-- Modal -->
+          <div class="modal fade" id="withdrawalModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="exampleModalLabel">1 KISA = $1 USD </h4><span>(according to market price)</span>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <h4>To $USD Account:  <input type="text" id="toUSDAcc"> </h4>
+                  <h4 id="amountToGet">Amount to Receive:  10 {{ tokenAmount }} USD</h4>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                  <button name="get-withdrawal" type="button" class="btn btn-primary">Receive</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Modal -->
+
+        </section>
+      </div>
+
+    </main>
+</template>
+
+<!-- transfer page -->
+<template name="transfer">
+  <main class="main-transfer">
+    <div class="my-transfer">
+      <header class="transfer-header">
+          <h3>Transfer to ...</h3>
+      </header>
+      <section class="transfer-action">
+        <h4>Sender: {{address}}
+        </h4>
+	      <h4>Receiver:  <input type="text" id="toAddress" size="40" value=""></h4>
+        <h4>Amount:  <input id="tokenAmount" type="number"/> tokens</h4>
+        <h4>password: <input id="password" type="password"/>
+        <button name="send-transfer" class="btn btn-primary">Send</button></h4>
+      </section>
+    </div>
+  </main>
+</template>
+
+<!-- model after deposit button -->
+<template name="exampleModal">
+    <div class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <h4 class="modal-title">Modal example</h4>
+          </div>
+
+          <div class="modal-body">
+            <p>A modal example.</p>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+</template>
+
+
+<!-- transactions page -->
+<template name="transactions">
+  <div class="trx-table">
+    <header class="transactions-header">
+      <h2>Transactions Info</h2>
+    </header>
+    <table class="table table-bordered table-condensed table-striped table-hover">
+        <thead>
+        <tr class="tx-info">
+            <th>TxId</th>
+            <th>Date</th>
+            <th>From Address</th>
+            <th>To Address</th>
+            <th>Token Amounts</th>
+        </tr>
+        </thead>
+        <tbody>
+          
+
+        {{#each list}}
+            
+            <!--{{>transactionListItem}}-->
+           <tr>
+              <td><div class="list-txId">{{time}}</div></td>
+              <td><div class="list-date">{{txId}}</div></td>
+              <td><div class="list-fromAddr">{{fromAddress}}</div></td>
+              <td><div class="list-toAddr">{{toAddress}}</div></td>
+              <td><div class="list-tokenAmt">{{tokenAmount}}</div></td>
+          </tr>
+        {{/each}}
+        </tbody>
+    </table>
+  </div>
+    <!-- <main class="main-transactions">
+      <div class="my-transactions">
+        <header class="transactions-header">
+            <h3>Transfer to ...</h3>
+        </header>
+        <section class="transactions-action">
+          <h4>Sender:  <select id="sender"></select> </h4>
+          <h4>Receiver:  <input type="text" id="toaddr" size="40" value=""></h4>
+          <h4>Amount:  <input id="amount" type="number"/> ETHER</h4>
+          <h4>password: <input id="pass" type="password"/>
+          <button name="send-transactions" class="btn btn-primary">Send</button></h4>
+        </section>
+      </div>
+    </main> -->
+  </template>
+
+  <template name="transactionListItem">
+      <tr>
+          <td><div class="list-txId">{{time}}</div></td>
+          <td><div class="list-date">{{txId}}</div></td>
+          <td><div class="list-fromAddr">{{fromAddress}}</div></td>
+          <td><div class="list-toAddr">{{toAddress}}</div></td>
+          <td><div class="list-tokenAmt">{{tokenAmount}}</div></td>
+      </tr>
+  </template>
+
+
+<!-- <template name="mainLayout">
+  {{> Template.dynamic template=main}}
+</template>
+<template name="test">
+    hello
+</template> -->
+
+
+<!-- <template name="info">
+  <h2>Learn Meteor!</h2>
+  <ul>
+    <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
+    <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
+    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
+    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
+  </ul>
+</template> -->
